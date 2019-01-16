@@ -1,5 +1,7 @@
 #ifndef MY_LED_H
 #define MY_LED_H
+/// \file my_led.h 
+/// Библиотека для работа с цветом светодиода.
 
 #include <stm32f4xx.h>
 #include <math.h>
@@ -9,38 +11,69 @@
 #define PRESCALER 10000
 #define STEP 1000
 
+/// \brief Выключить все лампочки на линии A.
+void SwitchOffAllA(void);
+/// \brief Выключить все лампочки на линии D.
+void SwitchOffAllD(void);
+/// \brief Включить лампочку на линии A.
+void SwitchOnA(uint16_t Pin);
+/// \brief Выключить лампочку на линии A.
+void SwitchOffA(uint16_t Pin);
+/// \brief Выключить лампочку на линии D.
+void SwitchOffD(uint16_t Pin);
+/// \brief Включить лампочку на линии D.
+void SwitchOnD(uint16_t Pin);
+/// \brief Прерывание таймера Tim2.
+void TIM2_IRQHandler(void);
+/// \brief Ожидание.
+void Wait(void);
+/// \brief Поднять яркость красного светодиода.
+void UpYarR(void);
+/// \brief Поднять яркость зеленого светодиода.
+void UpYarG(void);
+/// \brief Поднять яркость синего светодиода.
+void UpYarB(void);
+/// \brief Убавить яркость красного светодиода.
+void DownYarR(void);
+/// \brief Убавить яркость зеленого светодиода.
+void DownYarG(void);
+/// \brief Убавить яркость синего светодиода.
+void DownYarB(void);
+/// \brief Прерывание для первой кнопки.
+void EXTI0_IRQHandler (void);
+/// \brief Прерывание для второй кнопки.
+void EXTI1_IRQHandler (void);
+/// \brief Проверка, нажата ли кнопка.
+int IsSetButton(uint16_t Pin);
+/// \brief Инициализация таймера Tim2.
+void InitTim2(void);
+/// \brief Инициализация таймера Tim1.
+void InitTim1(void);
+/// \brief Инициализация линии D.
+void InitD(void);
+/// \brief Базовая инициализация линии A.
+void InitBaseA(void);
+/// \brief Инициализация линии A.
+void InitA(void);
+/// \brief Инициализация линии E.
+void InitE(void);
+/// \brief Инициализация прерываний по таймеру Tim2.
+void InitPrTim2(void);
+/// \brief Инициализация прерываний для первой кнопки.
+void InitPrButt0(void);
+/// \brief Инициализация прерываний для второй кнопки.
+void InitPrButt1(void);
+/// \brief Прерывания для первой кнопки.
+void ConfPr0(void);
+/// \brief Прерывания для второй кнопки.
+void ConfPr1(void);
+/// \brief Инициализация компеира для таймера Tim1.
+void InitCompForTim1(void);
+/// \brief Установка цвета в формате RGB.
+void setColorRGB(uint8_t R, uint8_t G, uint8_t B);
+/// \brief Установка цвета в формате HEX.
+void setColorHEX(uint32_t color);
+/// \brief Инициализация всего.
+void InitAll(void);
 
-void SwitchOffAllA(void);//!<Выключить все лампочки на линии A
-void SwitchOffAllD(void);//!<Выключить все лампочки на линии D
-void SwitchOnA(uint16_t Pin);//!<Включить лампочку на линии A
-void SwitchOffA(uint16_t Pin);//!<Выключить лампочку на линии A
-void SwitchOffD(uint16_t Pin);//!<Выключить лампочку на линии D
-void SwitchOnD(uint16_t Pin);//!<Включить лампочку на линии D
-void TIM2_IRQHandler(void);//!<Прерывание таймера Tim2
-void Wait(void);//!<Ожидание
-void UpYarR(void);//!<Поднять яркость красного светодиода
-void UpYarG(void);//!<Поднять яркость зеленого светодиода
-void UpYarB(void);//!<Поднять яркость синего светодиода
-void DownYarR(void);//!<Убавить яркость красного светодиода
-void DownYarG(void);//!<Убавить яркость зеленого светодиода
-void DownYarB(void);//!<Убавить яркость синего светодиода
-void EXTI0_IRQHandler (void);//!< Прерывание для первой кнопки
-void EXTI1_IRQHandler (void);//!< Прерывание для второй кнопки
-int IsSetButton(uint16_t Pin);//!< Проверка, нажата ли кнопка
-void InitTim2(void);//!< Инициализация таймера Tim2 
-void InitTim1(void);//!< Инициализация таймера Tim1
-void InitD(void);//!< Инициализация линии D
-void InitBaseA(void);//!< Базовая инициализация линии A
-void InitA(void);//!< Инициализация линии A
-void InitE(void);//!< Инициализация линии E
-void InitPrTim2(void);//!< Инициализация прерываний по таймеру Tim2
-void InitPrButt0(void);//!< Инициализация прерываний для первой кнопки
-void InitPrButt1(void);//!< Инициализация прерываний для второй кнопки
-void ConfPr0(void);//!< Прерывания для первой кнопки
-void ConfPr1(void);//!< Прерывания для второй кнопки
-void InitCompForTim1(void);//!< Инициализация компеира для таймера Tim1
-void setColorRGB(uint8_t R, uint8_t G, uint8_t B);//!< Установка цвета в формате RGB
-void setColorHEX(uint32_t color);//!< Установка цвета в формате HEX
-void InitAll(void);//!< Инициализация всего
-
-#endif
+#endif 

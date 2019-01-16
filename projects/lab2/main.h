@@ -15,4 +15,17 @@
 
 #include <math.h>
 
+ void SwitchOffAllA(void);
+ void SwitchOffAllD(void);
+ void SwitchOnA(uint16_t Pin);
+ void SwitchOffA(uint16_t Pin);
+ void SwitchOffD(uint16_t Pin);
+ void SwitchOnD(uint16_t Pin);
+ int IsSetButton(uint16_t Pin);
+ void InitTim2(void);
+ void InitD(void);
+ void InitBaseA(void);
+ void InitE(void);
+
+
 #endif  /* LEDS_AND_BUTTON_H */

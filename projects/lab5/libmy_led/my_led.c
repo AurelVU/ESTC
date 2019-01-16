@@ -1,7 +1,6 @@
 #include "my_led.h"
 
 
-static int swich = 0;
 static int pulseR;
 static int pulseG;
 static int pulseB;

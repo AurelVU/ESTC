@@ -5,7 +5,6 @@
 #define PRESCALER 10000
 #define STEP 1000
 
-static int swich = 0;
 static int pulseR;
 static int pulseG;
 static int pulseB;
@@ -13,11 +12,6 @@ static int pulseB;
 void SwitchOffAllA() 
 {
   GPIO_SetBits(GPIOA, GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10);
-}
-
-void SwitchOffAllD() 
-{
-  GPIO_ResetBits(GPIOD, GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
 }
 
 void SwitchOnA(uint16_t Pin) 
@@ -28,39 +22,6 @@ void SwitchOnA(uint16_t Pin)
 void SwitchOffA(uint16_t Pin) 
 {
   GPIO_SetBits(GPIOA, Pin);
-}
-
-
-void SwitchOffD(uint16_t Pin) 
-{
-  GPIO_ResetBits(GPIOD, Pin);
-}
-
-void SwitchOnD(uint16_t Pin) 
-{
-  GPIO_SetBits(GPIOD, Pin);
-}
-
-void TIM2_IRQHandler(void)
-{
-  if(TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
-  {
-    static int flag = 1;
-
-    if (flag)
-      SwitchOnD(GPIO_Pin_12); 
-    else
-      SwitchOffD(GPIO_Pin_12);    
-    flag = !flag;
-    TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-  } 
-}
-
-
-void Wait() 
-{
-  int i;
-  for (i = 0; i < SWITCH_DELAY; i++);
 }
 
 void UpYarR() 
@@ -127,8 +88,6 @@ void EXTI0_IRQHandler (void)
 
 void EXTI1_IRQHandler (void) 
 {
-    
-
   if (EXTI_GetITStatus(EXTI_Line1)!= RESET)
   {
     UpYarR();
@@ -138,25 +97,11 @@ void EXTI1_IRQHandler (void)
   }
 }
 
-
-
-
 int IsSetButton(uint16_t Pin) 
 {
   return !GPIO_ReadInputDataBit(GPIOE, Pin); 
 }
 
-void InitTim2() 
-{
-  TIM_TimeBaseInitTypeDef tim_struct;
-  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-  tim_struct.TIM_Period = PERIOD - 1;
-  tim_struct.TIM_Prescaler = PRESCALER - 1;
-  tim_struct.TIM_ClockDivision = 0;
-
-  tim_struct.TIM_CounterMode = TIM_CounterMode_Up;
-  TIM_TimeBaseInit(TIM2, &tim_struct);
-}
 
 void InitTim1() 
 {
@@ -168,30 +113,6 @@ void InitTim1()
 
   tim_struct2.TIM_CounterMode = TIM_CounterMode_Up;
   TIM_TimeBaseInit(TIM1, &tim_struct2);
-}
-
-void InitD() 
-{
-  GPIO_InitTypeDef GPIO_InitStructure;
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-  GPIO_InitStructure.GPIO_Pin   =  GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
-  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOD, &GPIO_InitStructure);
-}
-
-void InitBaseA() 
-{
-  GPIO_InitTypeDef GPIO_InitStructure;
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
-  GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10;
-  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
 void InitA() 
@@ -226,17 +147,6 @@ void InitE()
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
   GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
   GPIO_Init(GPIOE, &GPIO_InitStructure);
-}
-
-void InitPrTim2()
-{
-  TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
-  NVIC_InitTypeDef nvic_struct;
-  nvic_struct.NVIC_IRQChannel = TIM2_IRQn;
-  nvic_struct.NVIC_IRQChannelPreemptionPriority = 0;
-  nvic_struct.NVIC_IRQChannelSubPriority = 1;
-  nvic_struct.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&nvic_struct);
 }
 
 void InitPrButt0() 
@@ -308,9 +218,6 @@ void InitCompForTim1()
 
 int main(void)
 {
-  uint8_t  current_led = 0;
-
-  //InitD();  
   InitE();
   InitA();
   InitTim1();

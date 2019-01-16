@@ -1,0 +1,122 @@
+\hypertarget{my__led_8h}{}\section{my\+\_\+led.\+h File Reference}
+\label{my__led_8h}\index{my\+\_\+led.\+h@{my\+\_\+led.\+h}}
+{\ttfamily \#include $<$stm32f4xx.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{my__led_8h_a9c98153cdc564c887384887723b06cce}\label{my__led_8h_a9c98153cdc564c887384887723b06cce}} 
+\#define {\bfseries S\+W\+I\+T\+C\+H\+\_\+\+D\+E\+L\+AY}~500000
+\item 
+\mbox{\Hypertarget{my__led_8h_af281425e62298bac2df0fbe8690a4844}\label{my__led_8h_af281425e62298bac2df0fbe8690a4844}} 
+\#define {\bfseries P\+E\+R\+I\+OD}~8400
+\item 
+\mbox{\Hypertarget{my__led_8h_a0fac869d83ac1a584d6c45cf609f5fe7}\label{my__led_8h_a0fac869d83ac1a584d6c45cf609f5fe7}} 
+\#define {\bfseries P\+R\+E\+S\+C\+A\+L\+ER}~10000
+\item 
+\mbox{\Hypertarget{my__led_8h_a70be2dc5c8bdc85b027ea6118753cca1}\label{my__led_8h_a70be2dc5c8bdc85b027ea6118753cca1}} 
+\#define {\bfseries S\+T\+EP}~1000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{my__led_8h_abfdc7d756276621615738e3a9ad21d80}\label{my__led_8h_abfdc7d756276621615738e3a9ad21d80}} 
+void \mbox{\hyperlink{my__led_8h_abfdc7d756276621615738e3a9ad21d80}{Switch\+Off\+AllA}} (void)
+\begin{DoxyCompactList}\small\item\em Выключить все лампочки на линии A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a111c42ee483c821617c47763ee91293f}\label{my__led_8h_a111c42ee483c821617c47763ee91293f}} 
+void \mbox{\hyperlink{my__led_8h_a111c42ee483c821617c47763ee91293f}{Switch\+Off\+AllD}} (void)
+\begin{DoxyCompactList}\small\item\em Выключить все лампочки на линии D. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_af03488580af7346a25234cf185f8fcea}\label{my__led_8h_af03488580af7346a25234cf185f8fcea}} 
+void \mbox{\hyperlink{my__led_8h_af03488580af7346a25234cf185f8fcea}{Switch\+OnA}} (uint16\+\_\+t Pin)
+\begin{DoxyCompactList}\small\item\em Включить лампочку на линии A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a49a453540b13e5b7d72e5b7d62529944}\label{my__led_8h_a49a453540b13e5b7d72e5b7d62529944}} 
+void \mbox{\hyperlink{my__led_8h_a49a453540b13e5b7d72e5b7d62529944}{Switch\+OffA}} (uint16\+\_\+t Pin)
+\begin{DoxyCompactList}\small\item\em Выключить лампочку на линии A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a804a241b888d185907740a5e440dfd54}\label{my__led_8h_a804a241b888d185907740a5e440dfd54}} 
+void \mbox{\hyperlink{my__led_8h_a804a241b888d185907740a5e440dfd54}{Switch\+OffD}} (uint16\+\_\+t Pin)
+\begin{DoxyCompactList}\small\item\em Выключить лампочку на линии D. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a9bba6c968521e46ba2cc39c9db5fa6db}\label{my__led_8h_a9bba6c968521e46ba2cc39c9db5fa6db}} 
+void \mbox{\hyperlink{my__led_8h_a9bba6c968521e46ba2cc39c9db5fa6db}{Switch\+OnD}} (uint16\+\_\+t Pin)
+\begin{DoxyCompactList}\small\item\em Включить лампочку на линии D. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a38ad4725462bdc5e86c4ead4f04b9fc2}\label{my__led_8h_a38ad4725462bdc5e86c4ead4f04b9fc2}} 
+void \mbox{\hyperlink{my__led_8h_a38ad4725462bdc5e86c4ead4f04b9fc2}{T\+I\+M2\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Прерывание таймера Tim2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a20f3764acaf2c58c4e58d8df2aa512f5}\label{my__led_8h_a20f3764acaf2c58c4e58d8df2aa512f5}} 
+void \mbox{\hyperlink{my__led_8h_a20f3764acaf2c58c4e58d8df2aa512f5}{Wait}} (void)
+\begin{DoxyCompactList}\small\item\em Ожидание. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a6b8c5ae7d061f70c2bdbed7e098a0c6c}\label{my__led_8h_a6b8c5ae7d061f70c2bdbed7e098a0c6c}} 
+void \mbox{\hyperlink{my__led_8h_a6b8c5ae7d061f70c2bdbed7e098a0c6c}{Up\+YarR}} (void)
+\begin{DoxyCompactList}\small\item\em Поднять яркость красного светодиода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a63cf4056fadc5b43536ef6d31050c5ca}\label{my__led_8h_a63cf4056fadc5b43536ef6d31050c5ca}} 
+void \mbox{\hyperlink{my__led_8h_a63cf4056fadc5b43536ef6d31050c5ca}{Up\+YarG}} (void)
+\begin{DoxyCompactList}\small\item\em Поднять яркость зеленого светодиода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_af0727fcc3e6cbab57bd562f5ff72c6fc}\label{my__led_8h_af0727fcc3e6cbab57bd562f5ff72c6fc}} 
+void \mbox{\hyperlink{my__led_8h_af0727fcc3e6cbab57bd562f5ff72c6fc}{Up\+YarB}} (void)
+\begin{DoxyCompactList}\small\item\em Поднять яркость синего светодиода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_abe81c64de6b7380dbaadbb17ff809241}\label{my__led_8h_abe81c64de6b7380dbaadbb17ff809241}} 
+void \mbox{\hyperlink{my__led_8h_abe81c64de6b7380dbaadbb17ff809241}{Down\+YarR}} (void)
+\begin{DoxyCompactList}\small\item\em Убавить яркость красного светодиода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a0dc97fb71607bd2c63b3b0b91f6fcd8b}\label{my__led_8h_a0dc97fb71607bd2c63b3b0b91f6fcd8b}} 
+void \mbox{\hyperlink{my__led_8h_a0dc97fb71607bd2c63b3b0b91f6fcd8b}{Down\+YarG}} (void)
+\begin{DoxyCompactList}\small\item\em Убавить яркость зеленого светодиода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a65d3a71925b1a36e4bb5ba6cd27f9a13}\label{my__led_8h_a65d3a71925b1a36e4bb5ba6cd27f9a13}} 
+void \mbox{\hyperlink{my__led_8h_a65d3a71925b1a36e4bb5ba6cd27f9a13}{Down\+YarB}} (void)
+\begin{DoxyCompactList}\small\item\em Убавить яркость синего светодиода. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a17e9789a29a87d2df54f12b94dd1a0b6}\label{my__led_8h_a17e9789a29a87d2df54f12b94dd1a0b6}} 
+void \mbox{\hyperlink{my__led_8h_a17e9789a29a87d2df54f12b94dd1a0b6}{E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Прерывание для первой кнопки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a49cfdd46eb8d0ef3e1987514aa9343dc}\label{my__led_8h_a49cfdd46eb8d0ef3e1987514aa9343dc}} 
+void \mbox{\hyperlink{my__led_8h_a49cfdd46eb8d0ef3e1987514aa9343dc}{E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Прерывание для второй кнопки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_afbdc7a5deb59d944d1483eeba440053d}\label{my__led_8h_afbdc7a5deb59d944d1483eeba440053d}} 
+int \mbox{\hyperlink{my__led_8h_afbdc7a5deb59d944d1483eeba440053d}{Is\+Set\+Button}} (uint16\+\_\+t Pin)
+\begin{DoxyCompactList}\small\item\em Проверка, нажата ли кнопка. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_adb9db6701a7f0c294743d9260c738097}\label{my__led_8h_adb9db6701a7f0c294743d9260c738097}} 
+void \mbox{\hyperlink{my__led_8h_adb9db6701a7f0c294743d9260c738097}{Init\+Tim2}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация таймера Tim2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_addd7c165794f25ff73ad572ebea51770}\label{my__led_8h_addd7c165794f25ff73ad572ebea51770}} 
+void \mbox{\hyperlink{my__led_8h_addd7c165794f25ff73ad572ebea51770}{Init\+Tim1}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация таймера Tim1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a75e32388e5e93bbe3258e90d333c2271}\label{my__led_8h_a75e32388e5e93bbe3258e90d333c2271}} 
+void \mbox{\hyperlink{my__led_8h_a75e32388e5e93bbe3258e90d333c2271}{InitD}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация линии D. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_abf5d16f5b9e31d8ceeabc256997ade06}\label{my__led_8h_abf5d16f5b9e31d8ceeabc256997ade06}} 
+void \mbox{\hyperlink{my__led_8h_abf5d16f5b9e31d8ceeabc256997ade06}{Init\+BaseA}} (void)
+\begin{DoxyCompactList}\small\item\em Базовая инициализация линии A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a32e5f5ca3a6485a397faafd11527b2e2}\label{my__led_8h_a32e5f5ca3a6485a397faafd11527b2e2}} 
+void \mbox{\hyperlink{my__led_8h_a32e5f5ca3a6485a397faafd11527b2e2}{InitA}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация линии A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a0864ffecc9c004ab0b4569e0b802208d}\label{my__led_8h_a0864ffecc9c004ab0b4569e0b802208d}} 
+void \mbox{\hyperlink{my__led_8h_a0864ffecc9c004ab0b4569e0b802208d}{InitE}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация линии E. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a3672e3bce88efe1711fbaf33df2c5036}\label{my__led_8h_a3672e3bce88efe1711fbaf33df2c5036}} 
+void \mbox{\hyperlink{my__led_8h_a3672e3bce88efe1711fbaf33df2c5036}{Init\+Pr\+Tim2}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация прерываний по таймеру Tim2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a1aeb7aca81d982d77284d9aa93e2a83f}\label{my__led_8h_a1aeb7aca81d982d77284d9aa93e2a83f}} 
+void \mbox{\hyperlink{my__led_8h_a1aeb7aca81d982d77284d9aa93e2a83f}{Init\+Pr\+Butt0}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация прерываний для первой кнопки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_aabb8e8f482d296a8b4f67714f2e34c65}\label{my__led_8h_aabb8e8f482d296a8b4f67714f2e34c65}} 
+void \mbox{\hyperlink{my__led_8h_aabb8e8f482d296a8b4f67714f2e34c65}{Init\+Pr\+Butt1}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация прерываний для второй кнопки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a425cf059b228651c3538d4c607b57501}\label{my__led_8h_a425cf059b228651c3538d4c607b57501}} 
+void \mbox{\hyperlink{my__led_8h_a425cf059b228651c3538d4c607b57501}{Conf\+Pr0}} (void)
+\begin{DoxyCompactList}\small\item\em Прерывания для первой кнопки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a43bc8b3ecaf5df84011af7a054ef55c9}\label{my__led_8h_a43bc8b3ecaf5df84011af7a054ef55c9}} 
+void \mbox{\hyperlink{my__led_8h_a43bc8b3ecaf5df84011af7a054ef55c9}{Conf\+Pr1}} (void)
+\begin{DoxyCompactList}\small\item\em Прерывания для второй кнопки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_ac75be48d7bc9f0dec4ea01e35832f209}\label{my__led_8h_ac75be48d7bc9f0dec4ea01e35832f209}} 
+void \mbox{\hyperlink{my__led_8h_ac75be48d7bc9f0dec4ea01e35832f209}{Init\+Comp\+For\+Tim1}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация компеира для таймера Tim1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_af878e553f005831aae931ac17395d39a}\label{my__led_8h_af878e553f005831aae931ac17395d39a}} 
+void \mbox{\hyperlink{my__led_8h_af878e553f005831aae931ac17395d39a}{set\+Color\+R\+GB}} (uint8\+\_\+t R, uint8\+\_\+t G, uint8\+\_\+t B)
+\begin{DoxyCompactList}\small\item\em Установка цвета в формате R\+GB. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_adb13ffd684019445544a2f7409284fdc}\label{my__led_8h_adb13ffd684019445544a2f7409284fdc}} 
+void \mbox{\hyperlink{my__led_8h_adb13ffd684019445544a2f7409284fdc}{set\+Color\+H\+EX}} (uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Установка цвета в формате H\+EX. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my__led_8h_a8f33cf6540251b68df450d98de2627e4}\label{my__led_8h_a8f33cf6540251b68df450d98de2627e4}} 
+void \mbox{\hyperlink{my__led_8h_a8f33cf6540251b68df450d98de2627e4}{Init\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Инициализация всего. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Библиотека для работа с цветом светодиода. 

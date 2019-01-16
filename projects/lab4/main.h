@@ -15,4 +15,25 @@
 
 #include <math.h>
 
+ void SwitchOffAllA(void);
+ void SwitchOnA(uint16_t Pin);
+ void SwitchOffA(uint16_t Pin);
+ void UpYarR(void);
+ void UpYarG(void);
+ void UpYarB(void);
+ void DownYarR(void);
+ void DownYarG(void);
+ void DownYarB(void);
+ void EXTI0_IRQHandler (void);
+ void EXTI1_IRQHandler (void);
+ int IsSetButton(uint16_t Pin);
+ void InitTim1(void);
+ void InitA(void);
+ void InitE(void);
+ void InitPrButt0(void);
+ void InitPrButt1(void);
+ void ConfPr0(void);
+ void ConfPr1(void);
+ void InitCompForTim1(void);
+
 #endif  /* LEDS_AND_BUTTON_H */

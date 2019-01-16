@@ -1,5 +1,5 @@
 BUILD_ROOT = ../../..
-OBJS = main.o init.o
+OBJS = main.o 
 
 LED_DIR = ../libmy_led
 
